@@ -1,4 +1,18 @@
-Install packages
+# Microphone, 
+
+Install
+```
+pkg install snd sndio
+```
+
+add in /boot/loader.conf
+```
+snd_driver_load="YES"
+```
+
+# Webcam
+
+Install
 ```
 sudo pkg install v4l-utils v4l_compat webcamd
 ```
