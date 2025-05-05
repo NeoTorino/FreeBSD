@@ -1,0 +1,2 @@
+For python pip, these packages are required:
+pkg install cmake qt5-qmake
