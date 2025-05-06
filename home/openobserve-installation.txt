@@ -1,0 +1,33 @@
+Steps to compile and run openobserve on FreeBSD.
+
+Clone the repository:
+```
+git clone --depth 1 https://github.com/openobserve/openobserve.git
+cd ./openobserve/
+```
+
+The landing page is blank. To fix this, build the web folder manually.
+Before that, remove all cypress references from package.json as this package does not compile on FreeBSD.
+source: https://github.com/openobserve/openobserve/issues/927#issuecomment-1587115983
+```sed -i'' -e  '/cypress/d' ./web/package.json```
+
+Then run:
+```
+cd ./web
+npm install
+npm run build
+cd ../
+```
+Build it:
+```
+cargo build --release
+ZO_ROOT_USER_EMAIL="admin@example.local" ZO_ROOT_USER_PASSWORD="Complexpass#123" cargo run 
+```
+
+This step is neccesary of the build failes.
+Add this lines at the end of the .cargo/config.toml file
+```
+[build]
+rustflags = ["-C", "target-cpu=native"]
+rustdocflags = ["-C", "target-cpu=native"]
+```
