@@ -1,0 +1,16 @@
+server.host: '127.0.0.1'
+server.ssl.enabled: true
+server.ssl.certificate: /usr/local/etc/opensearch-dashboards/certs/server.crt
+server.ssl.key: /usr/local/etc/opensearch-dashboards/certs/server.key
+opensearch.hosts: ["https://127.0.0.1:9200"]
+opensearch.ssl.verificationMode: certificate
+opensearch.ssl.certificateAuthorities: [ "/usr/local/etc/opensearch-dashboards/certs/root-ca.crt" ]
+opensearch.ssl.certificate: /usr/local/etc/opensearch-dashboards/certs/server.crt
+opensearch.ssl.key: /usr/local/etc/opensearch-dashboards/certs/server.key
+opensearch.username: "kibanaserver"
+opensearch.password: "kibanaserver"
+opensearch.requestHeadersAllowlist: [ authorization,securitytenant ]
+opensearch_security.multitenancy.enabled: true
+opensearch_security.multitenancy.tenants.preferred: ["Private", "Global"]
+opensearch_security.readonly_mode.roles: ["kibana_read_only"]
+opensearch_security.cookie.secure: true
