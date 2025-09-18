@@ -1,0 +1,14 @@
+# Enable Num Lock
+# pre-requisite: pkg install numlockx
+numlockx on
+
+# Disable screen blanking
+xset s off
+xset -dpms
+xset s noblank
+
+# Plasma
+#exec dbus-launch --exit-with-x11 ck-launch-session startplasma-x11
+
+# XFCE
+. /usr/local/etc/xdg/xfce4/xinitrc
