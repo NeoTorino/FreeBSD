@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Name=Disable Screen Blanking
+Exec=sh -c 'xset s off && xset -dpms && xset s noblank'
+Hidden=false
+NoDisplay=false
+X-GNOME-Autostart-enabled=true
