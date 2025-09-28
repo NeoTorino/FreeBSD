@@ -1,0 +1,22 @@
+#!/bin/sh
+# nvidia-offload
+# FreeBSD PRIME render offload wrapper
+
+if [ $# -eq 0 ]; then
+    echo "Usage: $0 <command> [args...]"
+    exit 1
+fi
+
+# NVIDIA offload environment
+export __GLX_VENDOR_LIBRARY_NAME=nvidia
+export LIBGL_ALWAYS_INDIRECT=0
+export LIBGL_ALWAYS_SOFTWARE=0
+export MOZ_X11_EGL=1
+export MOZ_DISABLE_RDD_SANDBOX=1
+export DRI_PRIME=1
+export VDPAU_DRIVER=nvidia
+export EGL_DEVICE_ID=0
+
+# Run the program on the NVIDIA GPU
+exec env __NV_PRIME_RENDER_OFFLOAD=1 __NV_PRIME_RENDER_OFFLOAD_PROVIDER=NVIDIA-0 "$@"
+
