@@ -1,2 +1,6 @@
 For python pip, these packages are required:
 pkg install cmake qt5-qmake
+
+
+# To list all installed packages manually separated by space:
+pkg query -e '%a = 0' %o | sed 's|.*/||' | paste -s -d' ' - 
