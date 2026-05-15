@@ -1,3 +1,4 @@
+cat ~/github/NeoTorino/FreeBSD/home/OpenSearch_Bootstrap_ClassPath_Fix.md                                                                                                                                                   ✔ 
 # OpenSearch Bootstrap ClassPath Fix - FreeBSD
 
 ## Issue Summary
@@ -116,4 +117,4 @@ When upgrading OpenSearch in the future, check if this line still exists in the 
 sudo grep "Xbootclasspath" /usr/local/etc/opensearch/jvm.options
 ```
 
-If missing after an upgrade, re-add the line using the same command from step 3.
+If missing after an upgrade, re-add the line using the same command from step 3.% 
